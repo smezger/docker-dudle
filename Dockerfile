@@ -1,7 +1,7 @@
 # docker container running dudle
 
 FROM debian:jessie
-MAINTAINER Frank Grötzner <frank@unforgotten.de>
+MAINTAINER Dustin Jonda <Github@Dusitn-Jonda.de>
 
 # set needed variables
 ENV APACHE_RUN_USER www-data
@@ -18,23 +18,32 @@ RUN apt-get update && \
     ruby git \
     ruby-gettext \
     # for locales
-    potool make \
+    potool make gettext locales \
     # for atom-feed
     rubygems ruby-dev libxml2-dev zlib1g-dev
 
 # add apache configuration
 ADD etc/apache2/sites-available /etc/apache2/sites-available
 
+# generate locales
+RUN echo en_US.UTF-8 UTF-8 >> /etc/locale.gen && locale-gen
+
 # install dudle and configure apache
 RUN cd /var/www/html && \
     git clone https://github.com/kellerben/dudle.git && \
-#    make && \
     chown www-data dudle && \
+    cd dudle && \
+    git clone https://github.com/kellerben/dudle-css.git css && \
+    LC_ALL=en_US.utf8 make && \
     a2dissite 000-default && \
     a2ensite 001-dudle && \
     a2enmod cgid && \
     a2enmod auth_digest && \
     a2enmod rewrite
+
+# add dudle configuration and redirect
+ADD config /var/www/html/dudle
+ADD htaccess /var/www/html
 
 # configure some needed parameters
 RUN echo 'SetEnv RUBYLIB /var/www/html/dudle'             >> /var/www/html/dudle/.htaccess && \

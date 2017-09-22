@@ -1,4 +1,4 @@
-fonk-dudle
+dudle
 ==========
 Setup your own dudle!
 
@@ -6,10 +6,14 @@ Setup your own dudle!
 1. Debian
 1. Apache webserver
 1. Dudle software from https://github.com/kellerben/dudle
+1. CSS files from https://github.com/kellerben/dudle-css
+1. Dudle config file
+1. Accessible via proxy
 
 ### usage
-1. **docker run --name dudle -p 80:80 -d fonk/dudle**
-1. **Point your browser to http://localhost/dudle**
+1. **docker run --name dudle -p 8888:80 -d jaydee2202/dudle**
+1. **Create a reverse proxy that points to port 8888**
+1. **Point your browser to that (sub)domain**
 1. **Enjoy making you own polls**
 
 ### persistent polls
