@@ -1,6 +1,0 @@
-dudle:
-  image: jaydee2202/dudle:latest
-  restart: always
-  container_name: dudle
-  ports:
-    - "8888:80"
