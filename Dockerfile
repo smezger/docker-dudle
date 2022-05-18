@@ -45,7 +45,7 @@ RUN cd /var/www/html && \
 
 # add dudle configuration and redirect
 ADD config /var/www/html/dudle
-ADD htaccess /var/www/html
+# ADD htaccess /var/www/html
 
 # configure some needed parameters
 RUN echo 'SetEnv RUBYLIB /var/www/html/dudle'             >> /var/www/html/dudle/.htaccess && \
