@@ -1,5 +1,5 @@
 # docker container running dudle
-FROM debian:jessie
+FROM debian
 
 
 # set needed variables
