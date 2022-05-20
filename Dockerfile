@@ -35,7 +35,7 @@ RUN cd /var/www/html && \
     git clone https://github.com/kellerben/dudle.git && \
     chown www-data dudle && \
     cd dudle && \
-    git clone https://github.com/kellerben/dudle-css.git css && \
+    git clone https://github.com/smezger/DuD-css css && \
     LC_ALL=en_US.utf8 make && \
     a2dissite 000-default && \
     a2ensite 001-dudle && \
