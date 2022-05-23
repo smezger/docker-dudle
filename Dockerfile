@@ -32,7 +32,7 @@ RUN echo en_US.UTF-8 UTF-8 >> /etc/locale.gen && locale-gen
 
 # install dudle and configure apache
 RUN cd /var/www/html && \
-    git clone https://github.com/kellerben/dudle.git && \
+    git clone https://github.com/smezger/MezBOX_Umfrage.git && \
     chown www-data dudle && \
     cd dudle && \
     git clone https://github.com/smezger/DuD-css css && \
