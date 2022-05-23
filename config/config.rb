@@ -127,7 +127,7 @@ $conf.aboutnotice = <<ABOUTNOTICE
 		<li>Based on DuD Poll by TU Dresden</li>		
 	</ul>
 </div>
-#ABOUTNOTICE
+ABOUTNOTICE
 
 
 # choose a default stylesheet
