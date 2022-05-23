@@ -27,7 +27,7 @@
 # bzr and git are implemented
 # Warning: bzr is slow!
 # Warning: git needs git >=1.6.5
-# $conf.vcs = "git"
+$conf.vcs = "git"
 
 # Change only if the url is not determined correctly (e.g. at the start page)
 # $conf.siteurl = "https://yourpageurl.com/dudle/"
@@ -120,17 +120,16 @@
 #EXAMPLENOTICE
 
 # Add the following htmlcode to the about page.
-#$conf.aboutnotice = <<ABOUTNOTICE
-#<div class='textcolumn'>
-#	<h2>Bugs/Features</h2>
-#	<ul>
-#		<li><a href="Bugs">Report a Bug</a></li>
-#		<li><a href="Features">Request a Feature</a></li>
-#	</ul>
-#</div>
+$conf.aboutnotice = <<ABOUTNOTICE
+<div class='textcolumn'>
+	<h2>MezBOX Umfrage</h2>
+	<ul>
+		<li>Based on DuD Poll by TU Dresden</li>		
+	</ul>
+</div>
 #ABOUTNOTICE
 
 
 # choose a default stylesheet
 # e.g., "classic.css", "css/foobar.css", ...
-#$conf.default_css = "default.css"
+$conf.default_css = "MezBOX-Responsive.css"
