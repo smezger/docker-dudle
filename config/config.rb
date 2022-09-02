@@ -132,4 +132,4 @@ ABOUTNOTICE
 
 # choose a default stylesheet
 # e.g., "classic.css", "css/foobar.css", ...
-$conf.default_css = "MezBOX-Responsive.css"
+$conf.default_css = "css/MezBOX-Responsive.css"
